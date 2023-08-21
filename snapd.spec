@@ -84,14 +84,14 @@
 
 Name:           snapd
 Version:        2.58.3
-Release:        1%{?dist}
+Release:        1.rv64%{?dist}
 Summary:        A transactional software package manager
 License:        GPLv3
 URL:            https://%{provider_prefix}
 Source0:        https://%{provider_prefix}/releases/download/%{version}/%{name}_%{version}.no-vendor.tar.xz
 Source1:        https://%{provider_prefix}/releases/download/%{version}/%{name}_%{version}.only-vendor.tar.xz
 
-ExclusiveArch:  %{?golang_arches}%{!?golang_arches:%{ix86} x86_64 %{arm} aarch64 ppc64le s390x}
+ExclusiveArch:  %{?golang_arches}%{!?golang_arches:%{ix86} x86_64 %{arm} aarch64 ppc64le s390x riscv64}
 
 # If go_compiler is not set to 1, there is no virtual provide. Use golang instead.
 BuildRequires: make
